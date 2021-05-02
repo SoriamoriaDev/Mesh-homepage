@@ -320,3 +320,41 @@ body {
   width: 0%;
   left: 50%;
 }
+
+
+  /* PROGRESS BAR */
+
+.myProgress {
+    width: 100%;
+    background-color: #4d4d4d;
+}
+  
+.myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #55e7b5;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.pulsate {
+    -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.5;
+}
+
+@-webkit-keyframes pulsate {
+    0% { 
+        opacity: 0.5;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}

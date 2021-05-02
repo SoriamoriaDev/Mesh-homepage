@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesh Football - Alpha - Loader...</title>
+    <link rel="stylesheet" type="text/css" href="mesh.css">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Organise your games. Manage your crew. Team hub and chat.">
+    <link rel="icon" href="https://www.mesh-football.com/images/mesh_logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145891826-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145891826-1');
+
+        const url_front = "https://alpha-mesh-football.herokuapp.com/" ;
+        const url_back = "https://mesh-back-end.herokuapp.com/" ;
+
+        fetch(url_front, {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            //cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            //credentials: 'same-origin', // include, *same-origin, omit
+            headers: {'Content-Type': 'application/json'}, // 'Content-Type': 'application/x-www-form-urlencoded',
+            //redirect: 'follow', // manual, *follow, error
+            //referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            //body: JSON.stringify(data) // body data type must match "Content-Type" header
+        })
+            .then(data => console.log("Connected to FRONT, data : ", data));
+        
+        fetch(url_back, {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            //cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            //credentials: 'same-origin', // include, *same-origin, omit
+            headers: {'Content-Type': 'application/json'}, // 'Content-Type': 'application/x-www-form-urlencoded',
+            //redirect: 'follow', // manual, *follow, error
+            //referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            //body: JSON.stringify(data) // body data type must match "Content-Type" header
+        })
+            .then(data => console.log("Connected to BACK, data: ", data));
+        
+        setTimeout(function(){ 
+            window.location.href = url_front ;
+            console.log("function triggered")
+        }, 40000);
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+<a src="https://alpha-mesh-football.herokuapp.com/"></a>
+    
+
+<div id="myProgress" class="myProgress">
+
+    <div id="myBar" style="color: white" class="myBar"></div>
+
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="image-container">
+
+    <img src="images/mesh_logo.png" alt="Mesh Logo" width="150" />
+
+</div>   
+
+<!-- <h1>Loading...</h1> -->
+<h1 class="pulsate">loading...</h1>
+
+<script>
+
+    var i = 0;
+
+    if (i == 0) {
+
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id = setInterval(frame, 400);
+
+        function frame() {
+
+            if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+            } else {
+                width++;
+                elem.style.width = width + "%";
+            }
+        }
+
+    }
+    
+    
+</script>
+    
+
+</body>
+
+
+</html>
+
